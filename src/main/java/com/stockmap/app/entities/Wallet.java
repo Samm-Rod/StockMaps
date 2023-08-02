@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.text.DecimalFormat;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -19,6 +20,11 @@ public class Wallet implements Serializable {
     private Integer quantity;
     private String name;
     private Double totAssets;
+    @ManyToMany
+    @JoinTable(name = "wallet_assets",
+    joinColumns = {@JoinColumn(name = "wallet_id",referencedColumnName = "id")},
+    inverseJoinColumns = {@JoinColumn(name = "assets_id")})
+    private List<Assets> assets;
 
     @OneToOne(mappedBy = "wallets")
     private Users users;
