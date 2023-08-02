@@ -18,6 +18,11 @@ public class Assets {
     @ManyToMany(mappedBy = "assets")
     private List<Wallet> wallets;
 
+    
+    public Assets(){
+
+    }
+
     public Assets(Long id, String name, Integer quantity, Double price, Double totAssets) {
         this.id = id;
         this.name = name;
