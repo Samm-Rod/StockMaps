@@ -18,7 +18,7 @@ public class Assets {
     @ManyToMany(mappedBy = "assets")
     private List<Wallet> wallets;
 
-    
+
     public Assets(){
 
     }

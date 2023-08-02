@@ -9,6 +9,8 @@ import java.util.List;
 public interface AssetsRepository extends JpaRepository<Assets, String> {
 
 
-
+    List<Assets> findAll();
+    Assets findById(long id);
+    long countById(long id);
 
 }
